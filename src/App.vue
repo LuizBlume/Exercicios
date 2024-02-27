@@ -35,9 +35,9 @@ for (let i = 0; i < 10; i++) {
     <p class="itens">Nome invertido: {{ inverter(nome).toUpperCase() }}</p>
     <hr />
     <div class="buttons">
-      <button @click="incrementar">+</button>
-      <button @click="decrementar">-</button>
-      <button @click="reiniciar">zerar</button>
+      <button class="glow-on-hover" @click="incrementar">+</button>
+      <button class="glow-on-hover" @click="decrementar">-</button>
+      <button class="glow-on-hover" @click="reiniciar">zerar</button>
     </div>
     <p class="valor-contador">Valor do contador: {{ contador }}</p>
     <div v-if="contador > 10" class="valor-maior-10">Valor maior que 10</div>
@@ -87,23 +87,85 @@ hr {
   margin-top: 10px;
   width: 100%;
 }
-button {
-  width: 100px;
-  height: 30px;
-  margin: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgb(21, 182, 43);
-}
-button:hover {
-  background-color: rgb(46, 228, 70);
-  transition: 1s;
-  scale: 1.1;
-}
 .valor-contador {
   font-size: 20px;
   margin: 10px;
+}
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 1s ease;
+} 
+.glow-on-hover:hover {
+  transition: 1s ease;
+  scale: 1.1;
+}
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.glow-on-hover:active {
+  color: #000;
+  scale: 1.1;
+}
+.glow-on-hover:active:after {
+  background: transparent;
+}
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 </style>
