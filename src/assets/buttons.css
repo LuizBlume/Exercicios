@@ -75,7 +75,7 @@
 }
 @media only screen and (max-width: 600px) {
     .info {
-        width: 300px;
+        width: 500px;
     }
     .glow-on-hover {
         width: 180px;

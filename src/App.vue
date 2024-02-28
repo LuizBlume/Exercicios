@@ -67,7 +67,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30vw;
+  width: 55vw;
 }
 .teste {
   background-color: lightblue;
