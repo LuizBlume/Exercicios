@@ -12,12 +12,10 @@
     margin-top: 10px;
     transition: 1s ease;
 }
-
 .glow-on-hover:hover {
     transition: 1s ease;
     scale: 1.1;
 }
-
 .glow-on-hover:before {
     content: "";
     background: linear-gradient(45deg,
@@ -43,20 +41,16 @@
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
-
 .glow-on-hover:active {
     color: #000;
     scale: 1.1;
 }
-
 .glow-on-hover:active:after {
     background: transparent;
 }
-
 .glow-on-hover:hover:before {
     opacity: 1;
 }
-
 .glow-on-hover:after {
     z-index: -1;
     content: "";
@@ -68,37 +62,30 @@
     top: 0;
     border-radius: 10px;
 }
-
 @keyframes glowing {
     0% {
         background-position: 0 0;
     }
-
     50% {
         background-position: 400% 0;
     }
-
     100% {
         background-position: 0 0;
     }
 }
-
 @media only screen and (max-width: 600px) {
     .info {
         width: 90vw;
     }
-
     .glow-on-hover {
         width: 80px;
         font-size: 14px;
         margin: 10px;
     }
-
     .valor-contador {
         font-size: 16px;
         margin: 5px;
     }
-
     .valor-maior-10,
     .valor-menor-ou-igual-10 {
         padding: 5px;
