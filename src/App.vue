@@ -3,6 +3,8 @@ import { ref } from "vue";
 const nome = "Luiz";
 const idade = "16";
 const contador = ref(0);
+  // Armazenamento de valores da array quando for maior que 10
+const numeros = ref([]);
 // Função para inverter o texto
 function inverter(texto) {
   return texto.split("").reverse().join("");
@@ -21,8 +23,6 @@ function decrementar() {
 function reiniciar() {
   contador.value = 0;
 }
-// Armazenamento de valores da array quando for maior que 10
-const numeros = ref([]);
 // Repetição para que ocorra a identificação menor que 10
 for (let i = 0; i < 10; i++) {
   numeros.value.push(i);
